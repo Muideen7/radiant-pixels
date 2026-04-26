@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 
 const wordplay = [
-  { text: "Strategists", strike: false },
-  { text: "turned", strike: false, mute: true },
-  { text: "Producers", strike: false },
-  { text: "turned", strike: false, mute: true },
-  { text: "Directors", strike: false },
-  { text: "turned", strike: false, mute: true },
-  { text: "Builders.", strike: false, ember: true },
-];
+  { text: "Strategists", kind: "solid" },
+  { text: "turned", kind: "mute" },
+  { text: "Producers", kind: "solid" },
+  { text: "turned", kind: "mute" },
+  { text: "Directors", kind: "solid" },
+  { text: "turned", kind: "mute" },
+  { text: "Builders.", kind: "ember" },
+] as const;
 
 export function Hero() {
   return (
@@ -18,23 +18,17 @@ export function Hero() {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.8 }}
-        className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-widest font-medium"
+        className="flex flex-wrap items-center gap-4 text-xs uppercase tracking-widest font-medium text-muted-foreground"
       >
-        <span className="inline-flex items-center gap-2 border border-ink/20 rounded-full px-3 py-1.5 bg-paper/50 backdrop-blur">
-          <span className="w-1.5 h-1.5 rounded-full bg-ember animate-pulse" />
-          Booking — Spring ’26
-        </span>
-        <span className="text-muted-foreground hidden sm:inline">
-          Independent · Lisbon ↔ Worldwide
-        </span>
-        <span className="ml-auto text-muted-foreground hidden md:inline">
-          Est. MMXIX · Issue №07
+        <span>Independent · Lisbon ↔ Worldwide</span>
+        <span className="ml-auto hidden md:inline">
+          Booking projects for spring 2026
         </span>
       </motion.div>
 
-      {/* Stacked headline — vertical word-stack like ABCS */}
+      {/* Headline — humane, conversational */}
       <div className="flex-1 flex flex-col justify-center py-12 md:py-16">
-        <h1 className="font-display font-bold leading-[0.88] tracking-[-0.045em] text-[14vw] md:text-[9.5vw]">
+        <h1 className="font-display font-bold leading-[0.9] tracking-[-0.045em] text-[13vw] md:text-[8.8vw]">
           <span className="block overflow-hidden">
             <motion.span
               className="block"
@@ -42,7 +36,7 @@ export function Hero() {
               animate={{ y: "0%" }}
               transition={{ delay: 0.3, duration: 1, ease: [0.65, 0, 0.35, 1] }}
             >
-              A studio for the
+              We make websites
             </motion.span>
           </span>
           <span className="block overflow-hidden">
@@ -52,7 +46,7 @@ export function Hero() {
               animate={{ y: "0%" }}
               transition={{ delay: 0.42, duration: 1, ease: [0.65, 0, 0.35, 1] }}
             >
-              chronically <span className="text-ember">curious</span>.
+              people actually <span className="text-ember">remember</span>.
             </motion.span>
           </span>
         </h1>
@@ -66,9 +60,9 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.1 + i * 0.08, duration: 0.6 }}
               className={
-                w.mute
+                w.kind === "mute"
                   ? "text-muted-foreground italic font-serif font-light"
-                  : w.ember
+                  : w.kind === "ember"
                     ? "text-ember"
                     : ""
               }
@@ -86,17 +80,17 @@ export function Hero() {
         transition={{ delay: 1.4, duration: 0.9 }}
         className="grid grid-cols-1 md:grid-cols-12 gap-8 items-end border-t border-ink/20 pt-8"
       >
-        <p className="md:col-span-5 text-base md:text-lg leading-relaxed text-ink-soft max-w-md">
-          We build brand systems, digital products and award-winning web
-          experiences for teams who refuse to ship the ordinary — merging
-          systems-thinking with storytelling.
+        <p className="md:col-span-6 text-base md:text-lg leading-relaxed text-ink-soft max-w-md">
+          A small studio of designers and engineers building brand systems,
+          digital products and the kind of web experiences clients keep open
+          in another tab.
         </p>
 
-        <div className="md:col-span-4 flex flex-col gap-1 text-sm">
+        <div className="md:col-span-3 flex flex-col gap-1 text-sm">
           <span className="text-xs uppercase tracking-widest text-muted-foreground">
             Recognition
           </span>
-          <span className="font-medium">Awwwards · FWA · CSSDA · TDC · ADC</span>
+          <span className="font-medium">Awwwards · FWA · CSSDA</span>
         </div>
 
         <div className="md:col-span-3 flex md:justify-end">
