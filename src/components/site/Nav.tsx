@@ -18,7 +18,7 @@ export function Nav() {
           <li><a href="#process" className="hover-link">Process</a></li>
           <li><a href="#contact" className="hover-link">Contact</a></li>
         </ul>
-        <a href="#contact" className="text-sm font-medium hover-link">
+        <a href="#contact-form" className="text-sm font-medium hover-link">
           Start a project →
         </a>
       </nav>
