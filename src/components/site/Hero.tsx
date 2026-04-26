@@ -1,13 +1,11 @@
 import { motion } from "framer-motion";
 
 const wordplay = [
-  { text: "Strategists", kind: "solid" },
-  { text: "turned", kind: "mute" },
-  { text: "Producers", kind: "solid" },
-  { text: "turned", kind: "mute" },
-  { text: "Directors", kind: "solid" },
-  { text: "turned", kind: "mute" },
-  { text: "Builders.", kind: "ember" },
+  { text: "Part studio,", kind: "solid" },
+  { text: "part workshop,", kind: "mute" },
+  { text: "part", kind: "solid" },
+  { text: "love letter", kind: "mute" },
+  { text: "to the web.", kind: "ember" },
 ] as const;
 
 export function Hero() {
