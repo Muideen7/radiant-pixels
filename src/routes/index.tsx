@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
-import { Marquee } from "@/components/site/Marquee";
+
 import { Work } from "@/components/site/Work";
 import { Services } from "@/components/site/Services";
 import { Process } from "@/components/site/Process";
@@ -34,7 +34,7 @@ function Index() {
     <main className="bg-paper text-ink overflow-x-hidden">
       <Nav />
       <Hero />
-      <Marquee />
+      
       <Work />
       <Services />
       <Process />
