@@ -1,10 +1,8 @@
-@import "tailwindcss" source(none);
-@source "../src";
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap');
+@import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
-
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap');
 
 @theme inline {
   --font-display: "Syne", sans-serif;
@@ -45,12 +43,11 @@
 :root {
   --radius: 0.5rem;
 
-  /* Paper & Ink palette */
-  --paper: oklch(0.965 0.008 85);          /* #f5f3ee */
-  --paper-soft: oklch(0.92 0.008 85);      /* #e8e4dd */
-  --ink: oklch(0.12 0 0);                  /* #0d0d0d */
-  --ink-soft: oklch(0.27 0 0);             /* #2d2d2d */
-  --ember: oklch(0.66 0.22 35);            /* vivid orange-red accent */
+  --paper: oklch(0.965 0.008 85);
+  --paper-soft: oklch(0.92 0.008 85);
+  --ink: oklch(0.12 0 0);
+  --ink-soft: oklch(0.27 0 0);
+  --ember: oklch(0.66 0.22 35);
 
   --background: var(--paper);
   --foreground: var(--ink);

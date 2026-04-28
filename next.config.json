@@ -1,0 +1,11 @@
+{
+  "compiler": {
+    "removeConsole": true
+  },
+  "eslint": {
+    "ignoreDuringBuilds": true
+  },
+  "tailwindcss": {
+    "cssPath": "./src/app/globals.css"
+  }
+}

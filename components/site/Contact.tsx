@@ -1,3 +1,5 @@
+"use client";
+
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useId, useRef, useState } from "react";
 import { z } from "zod";
@@ -188,11 +190,19 @@ export function Contact() {
               id={`${uid}-heading`}
               className="font-display font-bold text-5xl md:text-7xl lg:text-8xl tracking-[-0.035em] leading-[0.95]"
             >
-              Let's make
-              <br />
-              <em className="font-serif font-light italic">something worth</em>
-              <br />
-              remembering.
+              {["Let's make", "something worth", "remembering."].map((line, i) => (
+                <span key={i} className="block overflow-hidden pb-1 -mb-1">
+                  <motion.span
+                    initial={{ y: "100%" }}
+                    whileInView={{ y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: i * 0.1, ease: [0.76, 0, 0.24, 1] }}
+                    className={`block ${i === 1 ? "font-serif font-light italic" : ""}`}
+                  >
+                    {line}
+                  </motion.span>
+                </span>
+              ))}
             </h2>
           </div>
           <div className="md:col-span-5 md:pt-6 flex flex-col justify-end">
