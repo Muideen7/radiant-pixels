@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 
 export function Footer() {
+  const year = new Date().getFullYear();
   const socialLinks = [
     { name: "Instagram", href: "#" },
     { name: "Read.cv", href: "#" },
@@ -81,7 +82,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-6 mt-24 pt-8 border-t border-paper/5 text-[10px] uppercase tracking-[0.3em] text-paper/30 font-bold">
-          <div>© North&amp;Co Studio MMXXVI · ALL RIGHTS RESERVED</div>
+          <div>© North&amp;Co Studio {year} · ALL RIGHTS RESERVED</div>
           <div className="uppercase tracking-[0.2em] text-paper/30 font-bold">
             REMOTE · WORLDWIDE
           </div>

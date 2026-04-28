@@ -19,7 +19,8 @@ export function Nav() {
 
   const toggleMenu = () => setMobileOpen(!mobileOpen);
   const closeMenu = () => setMobileOpen(false);
-  const barColor = mobileOpen ? '#fafaf9' : (isScrolled ? '#fafaf9' : '#1c1917');
+  const atTop = !isScrolled && typeof window !== 'undefined' && window.scrollY < 100;
+  const barColor = mobileOpen ? '#fafaf9' : (atTop ? '#fafaf9' : '#1c1917');
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <nav
@@ -30,7 +31,7 @@ export function Nav() {
       >
         {/* Logo */}
         <Link href="/" className="font-display font-black text-xl md:text-2xl tracking-tighter cursor-pointer z-50" onClick={closeMenu}>
-          <span style={{ color: mobileOpen ? '#fafaf9' : (isScrolled ? '#fafaf9' : '#1c1917') }}>
+          <span style={{ color: mobileOpen ? '#fafaf9' : (atTop ? '#fafaf9' : '#1c1917') }}>
             NORTH<span className="text-ember">&</span>CO<span className="text-[10px] align-top ml-0.5 opacity-40">®</span>
           </span>
         </Link>

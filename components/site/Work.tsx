@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useRef } from "react";
 
 const projects = [
@@ -74,9 +75,9 @@ export function Work() {
           transition={{ delay: 0.6 }}
           className="mt-12 md:mt-0"
         >
-          <a href="#" className="hover-link cursor-pointer text-[10px] uppercase tracking-[0.3em] font-bold border border-ink/10 rounded-full px-10 py-4 transition-all hover:bg-ink hover:text-paper cursor-pointer">
+          <Link href="/work" className="hover-link cursor-pointer text-[10px] uppercase tracking-[0.3em] font-bold border border-ink/10 rounded-full px-10 py-4 transition-all hover:bg-ink hover:text-paper cursor-pointer">
             Explore All Work
-          </a>
+          </Link>
         </motion.div>
       </div>
 
